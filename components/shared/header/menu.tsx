@@ -67,18 +67,18 @@ const Menu = () => {
             </Button>
           </SheetTrigger>
           <SheetContent className="flex flex-col items-start">
-            <SheetTitle>Menu</SheetTitle>
+            <SheetTitle className='ml-3 mt-3'>Menu</SheetTitle>
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="font-medium transition duration-150"
+                className="font-medium transition duration-150 mx-3"
               >
                 {item.name}
               </Link>
             ))}
             {/* GitHub Link added to nav bar */}
-            <Button variant="outline" asChild>
+            <Button variant="outline" className='ml-3' asChild>
               <Link
                 href="/"
                 target="_blank"
