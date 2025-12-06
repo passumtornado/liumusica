@@ -8,12 +8,17 @@ const Header = () => {
     <header className="w-full border-b">
       <div className="wrapper flex-between">
         <div className="flex-start">
-          <Link
-            href="/"
-            className="text-2xl font-extrabold tracking-wider"
-          >
-            <Image src="/logo.png" alt="Logo" width={40} height={40} priority={true}/>
-            {/* LIU <span className="text-blue-300">MuSiCa</span> */}
+          {/* <Link href="/" className="text-2xl font-extrabold tracking-wider">
+            LIU <span className="text-blue-300">MuSiCa</span>
+          </Link> */}
+          <Link href="/">
+            <Image
+              src="/assets/logo.svg"
+              alt="Logo"
+              width={150}
+              height={80}
+              priority={true}
+            />
           </Link>
         </div>
         <Menu />

@@ -28,7 +28,7 @@ export default function TeamMemberCard({
   imageUrl,
 }: MemberProps) {
   return (
-    <div className="relative group bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden">
+    <div className="relative group bg-white rounded-xl shadow-md hover:shadow-2xl transition duration-300 overflow-hidden">
       {/* Card Content */}
 
       <Card>
@@ -41,9 +41,9 @@ export default function TeamMemberCard({
             priority={true}
           />
         </CardHeader>
-        <CardContent className="">
-          <h2 className="text-xl font-bold text-blue-800 mb-1">{name}</h2>
-          <p className="text-md font-semibold text-gray-700">{role}</p>
+        <CardContent className="flex flex-col items-center text-center space-y-1 p-4">
+          <h2 className="text-lg font-bold text-slate-900 mb-1">{name}</h2>
+          <p className="text-md font-semibold text-slate-500">{role}</p>
           <p className="text-sm text-indigo-600 mt-3">{email}</p>
         </CardContent>
       </Card>
@@ -57,7 +57,7 @@ export default function TeamMemberCard({
 
       {/* Overlay for Social Links with transition animation */}
       <div
-        className="absolute inset-0 bg-blue-900/90 flex flex-col items-center justify-center 
+        className="absolute inset-0 bg-slate-900/90 flex flex-col items-center justify-center 
                       opacity-0 group-hover:opacity-100 transition-opacity duration-300 
                       transform translate-y-full group-hover:translate-y-0 cursor-pointer"
       >
@@ -67,7 +67,7 @@ export default function TeamMemberCard({
             href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-white text-blue-700 p-3 rounded-full hover:bg-gray-200 transition"
+            className="bg-white text-slate-700 p-3 rounded-full hover:bg-gray-200 transition"
             aria-label={`LinkedIn profile for ${name}`}
           >
             {/* Placeholder for LinkedIn Icon */}

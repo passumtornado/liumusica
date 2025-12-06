@@ -9,7 +9,7 @@ const teamMembers = [
     email: "fawah595@student.liu.se",
     linkedin: "https://linkedin.com/in/ahmed-fawaizat",
     github: "https://github.com/ahmed-f",
-    imageUrl: "/team/p1-1.jpg",
+    imageUrl: "/team/fawaizat_1.jpg",
   },
   {
     name: "Abdul Gaffar Abubakar Passum",
@@ -25,7 +25,7 @@ const teamMembers = [
     email: "vargu125@student.liu.se",
     linkedin: "https://linkedin.com/in/varun-g",
     github: "https://github.com/varun-g",
-    imageUrl: "/team/p2-1.jpg",
+    imageUrl: "/team/varun.jpg",
   },
   {
     name: "Mehran Mamivand",
@@ -33,7 +33,7 @@ const teamMembers = [
     email: "mehma172@student.liu.se",
     linkedin: "https://linkedin.com/in/mehran-m",
     github: "https://github.com/mehran-m",
-    imageUrl: "/team/p2-2.jpg",
+    imageUrl: "/team/mehran.jpg",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function TeamPage() {
           The team behind the LIU MuSiCa Transcription System. 
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member) => (
             <TeamMemberCard
               key={member.email}
