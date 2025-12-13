@@ -15,7 +15,7 @@ import {EllipsisVertical } from "lucide-react";
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Project", href: "/project" },
-  { name: "Documentation", href: "/documentation" },
+  { name: "Documents", href: "/documents" },
   { name: "Team", href: "/team" }, 
 ];
 

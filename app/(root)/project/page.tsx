@@ -9,6 +9,7 @@ import CodebaseSection from "@/components/shared/project/CodebaseSection";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import SystemOverview from "@/components/shared/project/Systemoverview";
+import Link from "next/link";
 
 // Define the navigation items and corresponding section IDs
 const NAV_ITEMS = [
@@ -68,28 +69,30 @@ export default function ProjectPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <main className="container mx-auto px-4 py-12 flex-1">
-        <div className="relative w-full h-64 md:h-96 mb-12 rounded-lg overflow-hidden shadow-md">
-          <Image
-            src="/assets/banner.jpg"
-            alt="Project Banner"
-            fill
-            className="object-cover"
-            priority={true}
-          />
-          <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center text-center px-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
-              The CDIO Project in Communication Systems:
-              <span className="block">Music Transcrition</span>
-            </h1>
-            <Button
-              variant="default"
-              onClick={() => scrollToSection("input-handling")}
-            >
-              Project Details
-            </Button>
-          </div>
+      <header className="relative w-full h-56 md:h-72 mb-8">
+        <Image
+          src="/assets/banner.jpg"
+          alt="Download Project Documents"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white">
+            The CDIO Project in Communication Systems:
+            <span className="block">Music Transcrition</span>
+          </h1>
+          <Link href="/documents">
+          <Button
+            variant="default"
+            className="mt-4"
+          >
+            Project Documents
+          </Button>
+          </Link>
         </div>
+      </header>
+      <main className="container mx-auto px-4 py-12 flex-1">
         <div className="flex flex-col md:flex-row gap-10">
           {/* Left Sidebar Navigation */}
           <nav className="md:w-1/4 sticky top-24 md:block hidden">
@@ -121,9 +124,7 @@ export default function ProjectPage() {
           {/* Main Content Area */}
           <div className="md:w-3/4">
             <div className="flex flex-col flex-start space-y-4">
-              <h2 className="text-3xl font-extrabold ">
-                Introduction
-              </h2>
+              <h2 className="text-3xl font-extrabold ">Introduction</h2>
               <p>
                 The Music Transcription project develops a system that converts
                 keyboard performances into a sequence of notes or a note sheet.
@@ -144,7 +145,6 @@ export default function ProjectPage() {
               <SystemOverview />
               <SignalProcessingSection />
             </div>
-            
           </div>
         </div>
       </main>

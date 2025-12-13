@@ -1,6 +1,6 @@
 // app/team/page.tsx
 import TeamMemberCard from "@/components/shared/team/team-card";
-
+import Image from "next/image";
 // Include placeholder social links for the new component
 const teamMembers = [
   {
@@ -40,17 +40,24 @@ const teamMembers = [
 export default function TeamPage() {
   return (
     <div className="min-h-screen bg-gray-50">
-
+      <header className="relative w-full h-56 md:h-72 mb-8">
+        <Image
+          src="/assets/banner.jpg"
+          alt="Download Project Documents"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/45 flex flex-col items-center justify-center text-center px-4">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white">
+            Meet the Team
+          </h1>
+          <p className="text-sm text-white/90 mt-2 max-w-xl">
+            The team behind the LIU MuSiCa Transcription System.
+          </p>
+        </div>
+      </header>
       <main className="container mx-auto px-4 py-12">
-        <h1 className="text-5xl font-extrabold text-gray-800 mb-10 text-center">
-        Meet the Team
-        </h1>
-        <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
-          The team behind the LIU MuSiCa Transcription System. We are a group of dedicated
-          individuals passionate about music and technology, working together to create an
-          innovative solution for music transcription.
-        </p>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {teamMembers.map((member) => (
             <TeamMemberCard
