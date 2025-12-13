@@ -5,13 +5,13 @@ import Image from 'next/image';
 
 const Header = () => {
   return (
-    <header className="w-full border-b">
+    <header className="W-full border-b">
       <div className="wrapper flex-between">
         <div className="flex-start">
           {/* <Link href="/" className="text-2xl font-extrabold tracking-wider">
             LIU <span className="text-blue-300">MuSiCa</span>
           </Link> */}
-          <Link href="/">
+          <Link href="/" className='flex-center'>
             <Image
               src="/assets/logo.svg"
               alt="Logo"

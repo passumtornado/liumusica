@@ -32,7 +32,7 @@ export default function TeamMemberCard({
       {/* Card Content */}
 
       <Card>
-        <CardHeader className="p-0 items-center">
+        <CardHeader className="flex flex-col p-0 justify-center items-center">
           <Image
             src={imageUrl}
             alt={`${name}'s profile picture`}

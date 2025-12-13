@@ -5,7 +5,7 @@ import TeamMemberCard from "@/components/shared/team/team-card";
 const teamMembers = [
   {
     name: "Ahmed Fawaizat Oyindamola",
-    role: "Team Lead / Signal Processing",
+    role: "Team Lead",
     email: "fawah595@student.liu.se",
     linkedin: "https://linkedin.com/in/ahmed-fawaizat",
     github: "https://github.com/ahmed-f",
@@ -13,15 +13,15 @@ const teamMembers = [
   },
   {
     name: "Abdul Gaffar Abubakar Passum",
-    role: "Backend / Pitch Detection",
+    role: "Design Lead",
     email: "abuab954@student.liu.se",
     linkedin: "https://linkedin.com/in/abdul-passum",
     github: "https://github.com/abdul-p",
-    imageUrl: "/team/p1-2.jpg",
+    imageUrl: "/team/gaf.jpg",
   },
   {
     name: "Varun Gurupurandar",
-    role: "GUI & Database Manager",
+    role: "Test Lead",
     email: "vargu125@student.liu.se",
     linkedin: "https://linkedin.com/in/varun-g",
     github: "https://github.com/varun-g",
@@ -29,7 +29,7 @@ const teamMembers = [
   },
   {
     name: "Mehran Mamivand",
-    role: "Evaluation & Testing",
+    role: "Documentation Lead",
     email: "mehma172@student.liu.se",
     linkedin: "https://linkedin.com/in/mehran-m",
     github: "https://github.com/mehran-m",
@@ -43,11 +43,12 @@ export default function TeamPage() {
 
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-5xl font-extrabold text-gray-800 mb-10 text-center">
-          Our Project Team
+        Meet the Team
         </h1>
         <p className="text-lg text-gray-600 text-center max-w-2xl mx-auto mb-12">
-          The team behind the LIU MuSiCa Transcription System. **Hover over a
-          card to view social links.**
+          The team behind the LIU MuSiCa Transcription System. We are a group of dedicated
+          individuals passionate about music and technology, working together to create an
+          innovative solution for music transcription.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

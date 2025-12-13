@@ -4,7 +4,7 @@ import React from 'react'
 
 const Homepage = () => {
   return (
-    <div className="wrapper my-16">
+    <div className="wrapper">
       <Hero />
       {/* Features Preview */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20">
