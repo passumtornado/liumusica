@@ -1,69 +1,96 @@
-// components/project/ResultsSection.tsx
-import React from "react";
-import MetricDisplay from "@/components/shared/metric/metricdisplya";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
-// Dummy data for presentation
-const demoMetrics = {
-  precision: 0.89,
-  recall: 0.85,
-  fScore: 0.87,
-  tp: 170,
-  fp: 21,
-  fn: 30,
-};
-
-export default function ResultsSection() {
+export default function TranscriptionResults() {
   return (
-    <section id="results" className="mb-16 pt-8 border-b border-gray-200">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">
-        4. Results and Evaluation Metrics
-      </h2>
-      <p className="text-lg text-gray-700 mb-6">
-        The system's performance is rigorously assessed against a **Ground Truth
-        (GT)** MIDI file using standard Music Information Retrieval (MIR)
-        metrics.
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="max-w-6xl mx-auto p-6"
+      id="results"
+    >
+      <h1 className="text-3xl font-bold mb-4">
+        Automatic Music Transcription – Results Summary
+      </h1>
+
+      <p className="text-base text-muted-foreground mb-6">
+        This section presents the results of the automatic music transcription
+        system applied to audio recorded from a Casio keyboard. The system
+        performs onset detection, pitch estimation, note classification, and
+        confidence analysis to convert raw audio into symbolic musical
+        information.
       </p>
 
-      <h3 className="text-xl font-semibold text-green-700 mb-4">
-        Core Metrics: F1-score, Precision, and Recall
-      </h3>
-      <p className="text-md text-gray-700 mb-4">
-        These metrics provide a balanced measure of transcription quality by
-        quantifying True Positives (TP), False Positives (FP), and False
-        Negatives (FN).
-      </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <Card className="rounded-2xl shadow-sm">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">Key Observations</h2>
+            <ul className="list-disc list-inside space-y-2 text-sm">
+              <li>
+                A clear note onset is detected at approximately 1.6 seconds,
+                followed by a natural decay envelope typical of a keyboard
+                instrument.
+              </li>
+              <li>
+                Spectral and Constant-Q analyses consistently identify a stable
+                fundamental frequency around 440 Hz, corresponding to the note
+                A4.
+              </li>
+              <li>
+                The pitch contour remains stable throughout the note duration,
+                indicating accurate monophonic pitch tracking without octave or
+                semitone errors.
+              </li>
+              <li>
+                The detected note duration exceeds four seconds, confirming
+                correct note segmentation and sustained-note handling.
+              </li>
+              <li>
+                Detection confidence is extremely high (near 100%), reflecting
+                robust performance under clean recording conditions.
+              </li>
+            </ul>
+          </CardContent>
+        </Card>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="space-y-4">
-          <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-green-500">
-            <h4 className="font-bold text-xl text-green-700">Precision</h4>
-            <p className="text-gray-700 text-sm">
-              Measures the **accuracy** of the notes detected. (TP / (TP + FP))
+        <Card className="rounded-2xl shadow-sm">
+          <CardContent className="p-4">
+            <h2 className="text-xl font-semibold mb-2">
+              System Interpretation
+            </h2>
+            <p className="text-sm leading-relaxed">
+              Overall, the results demonstrate that the transcription pipeline
+              performs reliably for monophonic keyboard input. The agreement
+              across waveform, spectrogram, Constant-Q, and pitch-contour views
+              confirms both temporal and spectral accuracy. This experiment
+              provides a strong baseline for generating ground-truth MIDI data
+              and for extending the system toward more complex scenarios such as
+              note sequences and polyphonic chords.
             </p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-yellow-500">
-            <h4 className="font-bold text-xl text-yellow-700">Recall</h4>
-            <p className="text-gray-700 text-sm">
-              Measures the **completeness** in finding all actual notes. (TP /
-              (TP + FN))
-            </p>
-          </div>
-          <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
-            <h4 className="font-bold text-xl text-blue-700">F1-score</h4>
-            <p className="text-gray-700 text-sm">
-              The harmonic mean of Precision and Recall, providing the overall
-              balanced score.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="text-2xl font-semibold text-gray-800 mb-3 text-center">
-            Final System Performance
-          </h4>
-          <MetricDisplay metrics={demoMetrics} />
-        </div>
+          </CardContent>
+        </Card>
       </div>
-    </section>
+
+      <div className="mt-8">
+        <h2 className="text-2xl font-semibold mb-4">Visualization Output</h2>
+        <p className="text-sm text-muted-foreground mb-4">
+          The figure below summarizes the waveform, time–frequency
+          representations, pitch confidence, and statistical note analysis
+          produced by the transcription system.
+        </p>
+
+        <Card className="rounded-2xl shadow-sm">
+          <CardContent className="p-4">
+            <img
+              src="/assets/results.png"
+              alt="Casio keyboard audio transcription analysis plots"
+              className="w-full rounded-xl"
+            />
+          </CardContent>
+        </Card>
+      </div>
+    </motion.section>
   );
 }

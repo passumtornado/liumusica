@@ -144,6 +144,7 @@ export default function ProjectPage() {
 
               <SystemOverview />
               <SignalProcessingSection />
+              <ResultsSection />
             </div>
           </div>
         </div>

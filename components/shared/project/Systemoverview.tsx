@@ -1,10 +1,18 @@
 // components/project/AlgorithmSection.tsx
 import React from "react";
 import Image from "next/image";
+import { motion as Motion } from "framer-motion";
 
 export default function SystemOverview() {
   return (
-    <section id="system-description" className="py-12">
+    <Motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      className="max-w-6xl mx-auto py-12"
+      id="system-description"
+    >
+    
       <div className="container mx-auto">
         <div className="grid grid-cols-1  gap-8 items-center">
           {/* Text column */}
@@ -70,6 +78,7 @@ export default function SystemOverview() {
           </div>
         </div>
       </div>
-    </section>
+
+    </Motion.section>
   );
 }
