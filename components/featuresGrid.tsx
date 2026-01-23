@@ -10,13 +10,13 @@ import {
 const features = [
   {
     icon: Music,
-    title: "Polyphonic Detection",
+    title: "Pitch Detection",
     description:
-      "Simultaneously detect up to 3 notes with advanced harmonic analysis and frequency tracking.",
+      "Simultaneously detect up to 2 notes with advanced harmonic analysis and frequency tracking.",
     details: [
-      "Multi-pitch estimation",
+      "Monophonic pitch estimation",
+      "Polyphonic pitch estimation",
       "Chord recognition",
-      "Harmonic grouping",
     ],
   },
   {
@@ -37,16 +37,14 @@ const features = [
       "Support for all major audio formats including WAV, MP3, FLAC, M4A, and AAC files.",
     details: ["WAV/MP3/FLAC support", "Batch processing", "Format conversion"],
   },
- 
+
   {
     icon: Download,
     title: "Export Functionality",
     description:
       "Export transcriptions to multiple formats including text, MIDI, and MusicXML.",
-    details: ["Text export", "MIDI generation", "MusicXML support"],
+    details: ["Text export", "MIDI generation", "Excel reports"],
   },
- 
-  
 ];
 
 export default function FeaturesGrid({ limit }: { limit?: number }) {
