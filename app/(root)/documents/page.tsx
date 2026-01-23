@@ -7,12 +7,12 @@ import { Download } from "lucide-react";
 const DOCS = [
   {
     name: "System Requirements",
-    file: "system-requirements.pdf",
+    file: "systemrequirement.pdf",
     desc: "Hardware and software requirements for installing and running the system.",
   },
   {
     name: "Design Specification",
-    file: "design-specification.pdf",
+    file: "designSpecification.pdf",
     desc: "High-level and detailed design decisions, architecture diagrams and interfaces.",
   },
   {
@@ -22,7 +22,7 @@ const DOCS = [
   },
   {
     name: "User Manual",
-    file: "user-manual.pdf",
+    file: "userManual.pdf",
     desc: "Step-by-step guide for end users and walkthroughs of the GUI.",
   },
   {
@@ -80,7 +80,7 @@ export default function Documents() {
                       <div className="flex items-center gap-3">
                         <span className="font-medium">{doc.name}</span>
                         <a
-                          href={`/assets/docs/${doc.file}`}
+                          href={`/douments/${doc.file}`}
                           download
                           className="ml-auto inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition"
                           aria-label={`Download ${doc.name}`}
@@ -110,7 +110,7 @@ export default function Documents() {
                       <div className="flex items-center gap-2">
                         <h3 className="font-medium">{doc.name}</h3>
                         <a
-                          href={`/assets/docs/${doc.file}`}
+                          href={`/assets/douments/${doc.file}`}
                           download
                           className="ml-auto inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 transition"
                           aria-label={`Download ${doc.name}`}

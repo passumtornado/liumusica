@@ -63,7 +63,7 @@ export default function TranscriptionResults() {
             <p className="text-sm leading-relaxed">
               Overall, the results demonstrate that the transcription pipeline
               performs reliably for monophonic keyboard input. The agreement
-              across waveform, spectrogram, Constant-Q, and pitch-contour views
+              across waveform, spectrogram, YIN and Constant-Q, and pitch-contour views
               confirms both temporal and spectral accuracy. This experiment
               provides a strong baseline for generating ground-truth MIDI data
               and for extending the system toward more complex scenarios such as
@@ -76,20 +76,32 @@ export default function TranscriptionResults() {
       <div className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">Visualization Output</h2>
         <p className="text-sm text-muted-foreground mb-4">
-          The figure below summarizes the waveform, time–frequency
-          representations, pitch confidence, and statistical note analysis
-          produced by the transcription system.
+          The figures below summarize the waveform, time–frequency
+          representations, pitch confidence, statistical note analysis, and
+          performance metrics produced by the transcription system.
         </p>
 
-        <Card className="rounded-2xl shadow-sm">
-          <CardContent className="p-4">
-            <img
-              src="/assets/results.png"
-              alt="Casio keyboard audio transcription analysis plots"
-              className="w-full rounded-xl"
-            />
-          </CardContent>
-        </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <img
+                src="/spectrogam_a4note.png"
+                alt="Casio keyboard audio transcription analysis plots"
+                className="w-full rounded-xl"
+              />
+            </CardContent>
+          </Card>
+
+          <Card className="rounded-2xl shadow-sm">
+            <CardContent className="p-4">
+              <img
+                src="/waveforn_a4note.png"
+                alt="Transcription system performance metrics and results"
+                className="w-full rounded-xl"
+              />
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </motion.section>
   );

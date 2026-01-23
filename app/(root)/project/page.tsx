@@ -16,7 +16,6 @@ const NAV_ITEMS = [
   { name: "System Overview", id: "system-description" },
   { name: "Processing Engine", id: "signal-processing" },
   { name: "Results", id: "results" },
-  { name: "Codebase", id: "codebase" },
 ];
 
 // Helper function to handle smooth scrolling
